@@ -1,0 +1,90 @@
+---
+title: "EXPLORATORY DATA ANALYSIS"
+author: "Jared Murundu"
+date: "3/21/2022"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# INTRODUCTION
+Exploratory data analysis is generally data driven hypothesis generation. Explortaory data analysis has two aspects namely:
+     1. Numerical summarisation.
+     2. Data Visualization.
+The following data is of focus in relation to the above topics.
+```{r}
+data<-read.csv("prostate_data.csv")
+
+data
+
+```
+
+
+## Numerical Summarization
+Under this we focus on the foolowing measures;
+    1. Measures of location.
+    2. Measures of Spread
+    3. Measures of skewness
+    4. Measures of Correlation
+    5. Measures of simmillarity and dissimilarity
+
+### Measures of Location    
+The measure of location entails the central tendencies, which includes the following;
+     1. The mean or the average
+     2. The Mode
+     3. The Median
+     4. The Dispersion of Variability
+     5. The Range and Inter-quartile Range
+     
+    
+#### The Mean
+This is the average of the data under study. This can be done using the respective variables under study. The following shows thee mean of the data variables of the prostrate data.
+```{r}
+survey<-read.csv("prostate_data.csv",header = TRUE)
+names(survey)
+```
+
+
+```{r}
+summary(survey)
+```
+```{r}
+summary(survey$age)
+```
+```{r}
+mean(survey$lcavol,na.rm = TRUE)
+mode<-mode(survey$lcavol)
+sd(survey$lcavol,na.rm = TRUE)
+
+```
+```{r}
+hist(survey$lcavol ,xlab = "The count",ylab = "The cavol counts")
+hist(survey$lweight,xlab = "The count",ylab = "The weight counts")
+hist(survey$age,xlab = "The count",ylab = "The age ")
+```
+```{r}
+boxplot(survey$lcavol,main="A Box plot for Lcavol")
+```
+```{r}
+boxplot(survey$lcavol,horizontal = TRUE,main="A Box plot for Lcavol")
+```
+## Ploting ta line graph 
+
+```{r}
+library(ggplot2)
+
+```
+
+
+```{r}
+library(ggplot2)
+
+```
+
+
+
+
